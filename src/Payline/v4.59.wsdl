@@ -1939,7 +1939,7 @@
 					</documentation>
 				</annotation>
 				<sequence>
-					<element name="amount" nillable="true" type="xsd:string" />
+					<element name="amount" type="xsd:string" />
 					<element name="currency" nillable="false" type="xsd:string" />
 					<element name="action" nillable="false" type="xsd:string" />
 					<element name="mode" nillable="false" type="xsd:string" />
