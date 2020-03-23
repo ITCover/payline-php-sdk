@@ -1,6 +1,6 @@
 {
-	"name" : "monext/payline-sdk",
-	"description" : "Payline library for PHP",
+	"name" : "itcover/payline-sdk",
+	"description" : "Payline library for PHP - ItCover / Advise specific changes ",
 	"keywords" : [
 		"Monext",
 		"Payline",
