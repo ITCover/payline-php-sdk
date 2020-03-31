@@ -1066,7 +1066,9 @@ class PaylineSDK
                         'payment.amount' => $array['payment']['amount']
                     );
                     $response = self::responseToArray($client->doAuthorization($WSRequest));
-                    $logResponse['transaction.id'] = $response['transaction']['id'];
+                    if (isset($response['transaction']['id'])) {
+                        $logResponse['transaction.id'] = $response['transaction']['id'];
+                    }
                     break;
                 case 'doCapture':
                     $logRequest = array(
@@ -1074,7 +1076,9 @@ class PaylineSDK
                         'payment.amount' => $array['payment']['amount']
                     );
                     $response = self::responseToArray($client->doCapture($WSRequest));
-                    $logResponse['transaction.id'] = $response['transaction']['id'];
+                    if (isset($response['transaction']['id'])) {
+                        $logResponse['transaction.id'] = $response['transaction']['id'];
+                    }
                     break;
                 case 'doCredit':
                     $logRequest = array(
@@ -1083,7 +1087,9 @@ class PaylineSDK
                         'card.number' => $this->hideChars($array['card']['number'], 4, 4)
                     );
                     $response = self::responseToArray($client->doCredit($WSRequest));
-                    $logResponse['transaction.id'] = $response['transaction']['id'];
+                    if (isset($response['transaction']['id'])) {
+                        $logResponse['transaction.id'] = $response['transaction']['id'];
+                    }
                     break;
                 case 'doDebit':
                     $logRequest = array(
@@ -1092,7 +1098,9 @@ class PaylineSDK
                         'card.number' => $this->hideChars($array['card']['number'], 4, 4)
                     );
                     $response = self::responseToArray($client->doDebit($WSRequest));
-                    $logResponse['transaction.id'] = $response['transaction']['id'];
+                    if (isset($response['transaction']['id'])) {
+                        $logResponse['transaction.id'] = $response['transaction']['id'];
+                    }
                     break;
                 case 'doImmediateWalletPayment':
                     $logRequest = array(
@@ -1101,7 +1109,9 @@ class PaylineSDK
                         'order.ref' => $array['order']['ref']
                     );
                     $response = self::responseToArray($client->doImmediateWalletPayment($WSRequest));
-                    $logResponse['transaction.id'] = $response['transaction']['id'];
+                    if (isset($response['transaction']['id'])) {
+                        $logResponse['transaction.id'] = $response['transaction']['id'];
+                    }
                     break;
                 case 'doReAuthorization':
                     $logRequest = array(
@@ -1109,7 +1119,9 @@ class PaylineSDK
                         'amount' => $array['payment']['amount']
                     );
                     $response = self::responseToArray($client->doReAuthorization($WSRequest));
-                    $logResponse['transaction.id'] = $response['transaction']['id'];
+                    if (isset($response['transaction']['id'])) {
+                        $logResponse['transaction.id'] = $response['transaction']['id'];
+                    }
                     break;
                 case 'doRecurrentWalletPayment':
                     $logRequest = array(
@@ -1128,14 +1140,18 @@ class PaylineSDK
                         'payment.amount' => $array['payment']['amount']
                     );
                     $response = self::responseToArray($client->doRefund($WSRequest));
-                    $logResponse['transaction.id'] = $response['transaction']['id'];
+                    if (isset($response['transaction']['id'])) {
+                        $logResponse['transaction.id'] = $response['transaction']['id'];
+                    }
                     break;
                 case 'doReset':
                     $logRequest = array(
                         'transactionID' => $array['transactionID']
                     );
                     $response = self::responseToArray($client->doReset($WSRequest));
-                    $logResponse['transaction.id'] = $response['transaction']['id'];
+                    if (isset($response['transaction']['id'])) {
+                        $logResponse['transaction.id'] = $response['transaction']['id'];
+                    }
                     break;
                 case 'doScheduledWalletPayment':
                     $logRequest = array(
@@ -1304,7 +1320,9 @@ class PaylineSDK
                         'creditor.iban' => $this->hideChars($array['creditor']['iban'], 8, 1)
                     );
                     $response = self::responseToArray($client->doBankTransfer($WSRequest));
-                    $logResponse['transaction.id'] = $response['transaction']['id'];
+                    if (isset($response['transaction']['id'])) {
+                        $logResponse['transaction.id'] = $response['transaction']['id'];
+                    }
                     break;
                 case 'isRegistered':
                     $logRequest = array(
